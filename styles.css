@@ -1,0 +1,254 @@
+body {
+    font-family: 'sans-serif';
+    margin: 0;
+    padding: 0;
+    color: #1f2937; 
+    background-color: #f0f0f0; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .header-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+}
+
+header .logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+header .title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #5e5e18; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    line-height: 1; 
+}
+
+header .title.darkmode {
+    color: #ffffff; 
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 60px;
+    margin: 0;
+    align-items: center;
+}
+
+nav li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav li:hover {
+    transform: translateY(-5px);
+    color: #10b981; /* Green 600 */
+}
+
+nav li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #10b981;
+    transition: width 0.3s ease;
+}
+
+nav li:hover::after {
+    width: 100%;
+}
+
+body.darkmode nav li {
+    color: #e0e0e0;
+}
+
+body.darkmode nav li:hover {
+    color: #3b82f6; 
+}
+
+body.darkmode nav li::after {
+    background-color: #3b82f6;
+}
+
+/* Dark Mode Toggle Icon */
+#toggleDark {
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: auto; 
+    display: inline-flex; 
+    align-items: center;  
+    justify-content: center;  
+    transition: color 0.3s;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('img/blueprint\ 2.jpg'), url('img/construction1.jpg'), url('img/modern\ city2.jpg'), url('img/modern\ city\ 5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: slide 20s ease-in-out infinite;
+    transition: background-image 0.3s ease;
+}
+
+@keyframes slide {
+    0% {
+        background-image: url('img/blueprint\ 2.jpg');
+    }
+    33% {
+        background-image: url('img/construction1.jpg');
+    }
+    66% {
+        background-image: url('img/modern\ city2.jpg');
+    }
+    100% {
+        background-image: url('img/modern\ city\ 5.jpg');
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ff0000; 
+    
+}
+
+
+
+.hero-text p {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+    text-transform: none;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* body.darkmode .hero-text h1 {
+    color: transparent;
+    background-image: linear-gradient(45deg, #fff, #fff, #fff);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+} */
+
+body.darkmode .hero-text p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* Dark Mode Styles */
+body.darkmode {
+    background-color: #121212; /* Dark Background */
+    color: hsl(0, 0%, 100%); /* Light Gray Text */
+}
+
+header.darkmode {
+    background-color: #1e1e1e; /* Slightly Lighter Dark for Header */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer.darkmode {
+    background-color: #1e1e1e; /* Footer Dark Background */
+    color: #e0e0e0; /* Light Text for Footer */
+}
+
+nav a.darkmode {
+    color: #e0e0e0; /* Light Text Color for Links in Dark Mode */
+}
+
+nav a.darkmode:hover {
+    color: #10b981; /* Green 600 */
+}
+
+
+/* .glassy-effect {
+    position: relative;
+    display: inline-block;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.25rem;
+    border-radius: 10px;
+
+}
+
+.glassy-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.043); 
+    backdrop-filter: blur(10px); 
+    border-radius: 10px; 
+    z-index: -1; 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); 
+} */
